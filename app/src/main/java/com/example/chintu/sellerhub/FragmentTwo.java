@@ -45,12 +45,16 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
     EditText p2_title, p2_desc;
     ImageView p2_image;
 
+    Bitmap bitmap2;
+
     static String e_desc,e_img,e_title;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_second, container, false);
+        setRetainInstance(true);
+
         next = (Button) v.findViewById(R.id.btn_p2);
         get_cam=(Button)v.findViewById(R.id.camera_btn2);
         get_gal=(Button)v.findViewById(R.id.galry_btn2);
@@ -61,6 +65,22 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
         get_gal.setOnClickListener(this);
         get_cam.setOnClickListener(this);
         return v;
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("img2",e_img);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            e_img=savedInstanceState.getString("img2","null");
+            byte[] decodedString = Base64.decode(e_img, Base64.DEFAULT);
+            bitmap2 = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            p2_image.setImageBitmap(bitmap2);
+        }
     }
 
     @Override
@@ -83,9 +103,9 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
         e_img = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         e_desc=p2_desc.getText().toString();
         e_title=p2_title.getText().toString();
-        if(validation()) {
+        //if(validation()) {
             //EventBus.getDefault().post(new Frag2(e_title,e_desc,e_img));
-        }
+        //}
     }
 
     private boolean validation() {

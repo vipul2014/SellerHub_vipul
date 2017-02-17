@@ -228,7 +228,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 dataAdd=true;
                 return "Updated";
             } catch (MalformedURLException e) {
-                e.printStackTrace();
+                Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG);
             } catch (IOException e) {
                 e.printStackTrace();
 

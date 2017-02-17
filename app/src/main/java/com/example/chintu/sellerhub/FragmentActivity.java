@@ -48,14 +48,18 @@ public class FragmentActivity extends Fragment implements View.OnClickListener {
     EditText p1_title, p1_desc;
     ImageView p1_image;
 
-    Bitmap bitmap;
+    Bitmap bitmap,bitmap2;
     static  String e_desc,e_img,e_title;
+
+
 
     @Nullable
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_first, container, false);
+        setRetainInstance(true);
         next = (Button) v.findViewById(R.id.btn_p1);
         get_cam=(Button)v.findViewById(R.id.camera_btn1);
         get_gal=(Button)v.findViewById(R.id.galry_btn1);
@@ -66,8 +70,24 @@ public class FragmentActivity extends Fragment implements View.OnClickListener {
         get_gal.setOnClickListener(this);
         get_cam.setOnClickListener(this);
 
-
         return v;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("img",e_img);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            e_img=savedInstanceState.getString("img","null");
+            byte[] decodedString = Base64.decode(e_img, Base64.DEFAULT);
+            bitmap2 = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            p1_image.setImageBitmap(bitmap2);
+        }
     }
 
     @Override
@@ -84,16 +104,16 @@ public class FragmentActivity extends Fragment implements View.OnClickListener {
     }
 
     private void sendData() {
-        Bitmap bitmap = ((BitmapDrawable) p1_image.getDrawable()).getBitmap();
+         bitmap2 = ((BitmapDrawable) p1_image.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        bitmap2.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] imageBytes = baos.toByteArray();
         e_img = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         e_desc=p1_desc.getText().toString();
         e_title=p1_title.getText().toString();
-        if(validation()) {
+        //if(validation()) {
            // EventBus.getDefault().post(new Frag1(e_title,e_desc,e_img));
-        }
+        //}
     }
 
     private boolean validation() {
@@ -140,7 +160,7 @@ public class FragmentActivity extends Fragment implements View.OnClickListener {
             if(resultCode==RESULT_OK){
                 Uri selectedImage=data.getData();
                 String[] filePathColumn={MediaStore.Images.Media.DATA};
-                Cursor cursor=getActivity().getContentResolver().query(selectedImage,filePathColumn,null,null,null);
+                Cursor cursor=getContext().getContentResolver().query(selectedImage,filePathColumn,null,null,null);
                 cursor.moveToFirst();
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);

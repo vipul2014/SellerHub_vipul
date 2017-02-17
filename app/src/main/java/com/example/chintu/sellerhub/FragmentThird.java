@@ -68,15 +68,18 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
     TextView sample;
     boolean dataAdd=false;
 
+    Bitmap bitmap2;
+
     ProgressDialog progressDialog;
 
-    String e_desc,e_img,e_title,e1_desc,e1_img,e1_title,e2_desc,e2_img,e2_title,artistid;
+    static  String e_desc,e_img,e_title,e1_desc,e1_img,e1_title,e2_desc,e2_img,e2_title,artistid;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //EventBus e= EventBus.getDefault();
         //e.register(this);
         View v = inflater.inflate(R.layout.fragment_third, container, false);
+        setRetainInstance(true);
         next = (Button) v.findViewById(R.id.btn_p3);
         get_cam = (Button) v.findViewById(R.id.camera_btn3);
         get_gal = (Button) v.findViewById(R.id.galry_btn3);
@@ -91,6 +94,32 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
 
         return v;
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("img3",e_img);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            e_img=savedInstanceState.getString("img3","null");
+            byte[] decodedString = Base64.decode(e_img, Base64.DEFAULT);
+            bitmap2 = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            p3_image.setImageBitmap(bitmap2);
+        }
+    }
+
+    private void getbitmap() {
+        Bitmap bitmap = ((BitmapDrawable) p3_image.getDrawable()).getBitmap();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        e_img = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+    }
+
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -103,11 +132,7 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
         }
     }
     private void sendData() {
-        Bitmap bitmap = ((BitmapDrawable) p3_image.getDrawable()).getBitmap();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] imageBytes = baos.toByteArray();
-        e_img = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+
         e_desc = p3_desc.getText().toString();
         e_title = p3_title.getText().toString();
         final SharedPreferences mSharedPreference = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
@@ -116,16 +141,14 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
             e1_desc=Frag1.getdesc();
             e1_title=Frag1.gettitle();
             e1_img=Frag1.getimg();
-            FragmentThird.Background1 background1 = new FragmentThird.Background1();
-            background1.execute(artistid, e1_img, e1_title, e1_desc);
-            //sample.setText("done1");
-           e1_desc= FragmentTwo.Frag2.getdesc();
-            e1_title= FragmentTwo.Frag2.gettitle();
-            e1_img= FragmentTwo.Frag2.getimg();
-            FragmentThird.Background2 background2 = new FragmentThird.Background2();
-            background2.execute(artistid, e1_img, e1_title, e1_desc);
-            //sample.setText("done2");
-            //background.execute(artistid, e_img, e_title, e_desc);
+            e2_desc= FragmentTwo.Frag2.getdesc();
+            e2_title= FragmentTwo.Frag2.gettitle();
+            e2_img= FragmentTwo.Frag2.getimg();
+           // sample.setText(e1_img);
+            FragmentThird.Background background1 = new FragmentThird.Background();
+            background1.execute(artistid, e1_img, e1_title, e1_desc,e2_img,e2_title,e2_desc,e_img,e_title,e_desc);
+
+
         }
     }
 
@@ -140,7 +163,9 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
         }
     }
 
-    private class Background1 extends AsyncTask<String, String, String> {
+
+
+    private class Background extends AsyncTask<String, String, String> {
 
         @Override
         protected void onPreExecute() {
@@ -171,11 +196,23 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
                 String data = URLEncoder.encode("artist_id", "UTF-8") + "=" + URLEncoder.encode(artistid, "UTF-8")
                         + "&" +
 
-                        URLEncoder.encode("img", "UTF-8") + "=" + URLEncoder.encode(e2_img, "UTF-8") + "&" +
+                        URLEncoder.encode("img", "UTF-8") + "=" + URLEncoder.encode(e1_img, "UTF-8") + "&" +
 
-                        URLEncoder.encode("title", "UTF-8") + "=" + URLEncoder.encode(e2_title, "UTF-8") + "&" +
+                        URLEncoder.encode("title", "UTF-8") + "=" + URLEncoder.encode(e1_title, "UTF-8") + "&" +
 
-                        URLEncoder.encode("description", "UTF-8") + "=" + URLEncoder.encode(e2_desc, "UTF-8");
+                        URLEncoder.encode("description", "UTF-8") + "=" + URLEncoder.encode(e1_desc, "UTF-8")
+                        + "&" +
+                        URLEncoder.encode("img2", "UTF-8") + "=" + URLEncoder.encode(e2_img, "UTF-8") + "&" +
+
+                        URLEncoder.encode("title2", "UTF-8") + "=" + URLEncoder.encode(e2_title, "UTF-8") + "&" +
+
+                        URLEncoder.encode("description2", "UTF-8") + "=" + URLEncoder.encode(e2_desc, "UTF-8")
+                        + "&" +
+                        URLEncoder.encode("img3", "UTF-8") + "=" + URLEncoder.encode(e_img, "UTF-8") + "&" +
+
+                        URLEncoder.encode("title3", "UTF-8") + "=" + URLEncoder.encode(e_title, "UTF-8") + "&" +
+
+                        URLEncoder.encode("description3", "UTF-8") + "=" + URLEncoder.encode(e_desc, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -187,7 +224,7 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
                 dataAdd=true;
                 return "Updated";
             } catch (MalformedURLException e) {
-                return "error";
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
 
@@ -205,62 +242,7 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
 
         }
     }
-    private class Background2 extends AsyncTask<String, String, String> {
 
-
-
-
-        @Override
-        protected String doInBackground(String... params) {
-            artistid = params[0];
-            e2_img = params[1];
-            e2_title = params[2];
-            e2_desc = params[3];
-
-            try {
-                URL url = new URL("http://artbirdz.hol.es/sellerApp/registration/portfolio.php");
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setDoOutput(true);
-                OutputStream OS = httpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
-                String data = URLEncoder.encode("artist_id", "UTF-8") + "=" + URLEncoder.encode(artistid, "UTF-8")
-                        + "&" +
-
-                        URLEncoder.encode("img", "UTF-8") + "=" + URLEncoder.encode(e2_img, "UTF-8") + "&" +
-
-                        URLEncoder.encode("title", "UTF-8") + "=" + URLEncoder.encode(e2_title, "UTF-8") + "&" +
-
-                        URLEncoder.encode("description", "UTF-8") + "=" + URLEncoder.encode(e2_desc, "UTF-8");
-                bufferedWriter.write(data);
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                OS.close();
-                InputStream IS = httpURLConnection.getInputStream();
-                IS.close();
-                //httpURLConnection.connect();
-                httpURLConnection.disconnect();
-                dataAdd=true;
-                return "Updated";
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            }
-
-            return null;
-
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-
-           // progressDialog.dismiss();
-            Toast.makeText(getActivity().getApplicationContext(), s, Toast.LENGTH_LONG).show();
-
-        }
-    }
 
 
     private boolean validation() {
@@ -314,6 +296,7 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
                 cursor.close();
                 p3_image.setImageBitmap(BitmapFactory
                         .decodeFile(imgDecodableString));
+                getbitmap();
             }
             else
             {
@@ -328,6 +311,7 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
             options.inSampleSize = 8;
             final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(), options);
             p3_image.setImageBitmap(bitmap);
+            getbitmap();
         }
         catch(NullPointerException e){
             e.printStackTrace();
