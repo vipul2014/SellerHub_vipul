@@ -182,9 +182,16 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
         @Override
         protected String doInBackground(String... params) {
             artistid = params[0];
+            e1_img = params[1];
+            e1_title = params[2];
+            e1_desc = params[3];
             e2_img = params[1];
             e2_title = params[2];
             e2_desc = params[3];
+            e_img = params[1];
+            e_title = params[2];
+            e_desc = params[3];
+
 
             try {
                 URL url = new URL("http://artbirdz.hol.es/sellerApp/registration/portfolio.php");
@@ -213,6 +220,7 @@ public class FragmentThird extends Fragment implements View.OnClickListener{
                         URLEncoder.encode("title3", "UTF-8") + "=" + URLEncoder.encode(e_title, "UTF-8") + "&" +
 
                         URLEncoder.encode("description3", "UTF-8") + "=" + URLEncoder.encode(e_desc, "UTF-8");
+                Log.w("encodeo string",data);
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
