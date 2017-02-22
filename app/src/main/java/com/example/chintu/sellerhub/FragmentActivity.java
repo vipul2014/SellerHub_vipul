@@ -12,7 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-public class FragmentActivity extends Fragment {
+public class FragmentActivity extends Fragment
+{
     Button next, get_cam, get_gal;
     EditText p1_title, p1_desc;
     ImageView p1_image;
