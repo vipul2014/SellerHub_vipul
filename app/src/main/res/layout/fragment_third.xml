@@ -25,16 +25,18 @@
                 android:layout_gravity="center_horizontal"
                 />
             <EditText
+                android:id="@+id/p3_title"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Title"
                 />
             <ImageView
+                android:id="@+id/p3_img"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/abc"
+
                 android:layout_gravity="center_horizontal"/>
             <RelativeLayout
                 android:layout_width="260dp"
@@ -47,6 +49,7 @@
                     android:background="@android:color/transparent"
                     android:text="Gallery"/>
                 <Button
+                    android:id="@+id/camera_btn3"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/galry_btn3"
@@ -54,6 +57,7 @@
                     android:text="Camera"/>
             </RelativeLayout>
             <EditText
+                android:id="@+id/p3_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description"
@@ -61,6 +65,10 @@
                 android:lines="3"
                 android:maxLines="5"
                 android:scrollbars="vertical"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sample"/>
             <Button
                 android:id="@+id/btn_p3"
                 style="?android:textAppearanceSmall"
