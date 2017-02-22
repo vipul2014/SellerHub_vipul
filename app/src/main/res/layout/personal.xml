@@ -18,6 +18,7 @@
             android:id="@+id/i_userpic"
             android:layout_width="150dp"
             android:layout_height="120dp"
+            android:src="@drawable/a"
             />
 
             <Button
