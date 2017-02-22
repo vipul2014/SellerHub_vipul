@@ -26,7 +26,7 @@ public class FragmentActivity extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ViewPager mViewPager
+                ViewPager mViewPager;
                 mViewPager.setCurrentItem(2);
 
             }
