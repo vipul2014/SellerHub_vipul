@@ -35,7 +35,7 @@ import java.net.URLEncoder;
 /**
  * Created by Vipul Chauhan on 2/5/2017.
  */
-public class BankReg extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
+public class  BankReg extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
 
     AutoCompleteTextView acc_no;
     EditText ifsc;
