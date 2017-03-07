@@ -1,7 +1,6 @@
 package com.example.chintu.sellerhub;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +17,8 @@ public class PickupEdit extends AppCompatActivity {
     Button save;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.pickup_edit);
         flat=(EditText)findViewById(R.id.etpe_flat);
         road=(EditText)findViewById(R.id.etpe_road);

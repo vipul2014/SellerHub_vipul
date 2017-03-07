@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="#d3e75f25"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="25dp"
+    android:paddingBottom="25dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+            <com.example.chintu.sellerhub.RoundedImageView
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/default_dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerInside"                >
+                </com.example.chintu.sellerhub.RoundedImageView>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Artist Name"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="13dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+
+</LinearLayout>

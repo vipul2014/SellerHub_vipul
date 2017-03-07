@@ -9,11 +9,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -35,7 +33,7 @@ import java.net.URLEncoder;
 /**
  * Created by Vipul Chauhan on 2/5/2017.
  */
-public class  BankReg extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
+public class BankReg extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
 
     AutoCompleteTextView acc_no;
     EditText ifsc;
@@ -73,7 +71,7 @@ public class  BankReg extends AppCompatActivity implements View.OnClickListener,
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btn_login){
+        if(v.getId()== R.id.btn_login){
             upload();
         }
 

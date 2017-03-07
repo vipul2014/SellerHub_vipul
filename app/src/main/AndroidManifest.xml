@@ -25,8 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NavigationActivity"/>
         <activity android:name=".SignUp"></activity>
         <activity android:name=".PortFolio"></activity>
+        <activity android:name=".BankEdit"></activity>
+        <activity android:name=".BasicEdit"></activity>
+        <activity android:name=".PickupEdit"></activity>
         <activity android:name=".BankReg"></activity>
     </application>
 

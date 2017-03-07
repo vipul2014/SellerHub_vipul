@@ -17,7 +17,7 @@
     <string name="name">Name</string>
     <string name="login">login</string>
     <string name="phone">Phone No.</string>
-    <string name="adress">Address</string>
+    <string name="adress">Adress</string>
     <string name="title_activity_login">Sign in</string>
     <string name="p1">Product #1</string>
     <string name="p2">Product #2</string>
@@ -127,4 +127,10 @@
         <item>Uttarakhand</item>
         <item>West Bengal</item>
     </string-array>
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

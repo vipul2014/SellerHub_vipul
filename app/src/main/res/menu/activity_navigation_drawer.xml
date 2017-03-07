@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/collapse"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/listing_icon"
+            android:title="Listing" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/payment_icon"
+            android:title="Payement" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/order_icon"
+            android:title="Order" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/return_icon"
+            android:title="Return" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile_icon"
+            android:title="Profile" />
+    </group>
+
+
+
+</menu>

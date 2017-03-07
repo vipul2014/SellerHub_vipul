@@ -31,17 +31,17 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
                 android:id="@+id/icon"
-                android:src="@drawable/ab"
+                android:src="@drawable/logo"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="25dp"/>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/t_username"
                 android:layout_below="@+id/icon"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_centerHorizontal="true"
@@ -86,8 +86,9 @@
                 android:layout_height="30dp"
                 android:text="@string/login"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:background="#ece18f23"
+                android:textSize="15sp"
+                android:background="#e75f25"
+                android:textColor="#ffff"
                 android:layout_below="@+id/t_password"
                 android:layout_marginTop="25dp"
                 android:layout_centerHorizontal="true"
@@ -116,7 +117,7 @@
             <Button
                 android:layout_width="300dp"
                 android:layout_height="30dp"
-                android:background="#000000"
+                android:background="#512826"
                 android:text="SIGN UP"
                 android:id="@+id/signup_bttn"
                 android:padding="2dp"
@@ -131,7 +132,7 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/t4"
                 android:text="By signing up, you agree to ArtBirdz's Terms of Use and Privacy Policy"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:textColor="@android:color/background_dark"
                 android:layout_centerHorizontal="true"
                 android:gravity="center_horizontal"/>

@@ -1,7 +1,6 @@
 package com.example.chintu.sellerhub;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,8 +19,8 @@ public class BasicEdit extends AppCompatActivity {
     Button save;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_edit);
 
         name=(EditText)findViewById(R.id.etbae_name);

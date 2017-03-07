@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/personal_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e5e5"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#e7e5e5" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#FFA27A">
+        <com.example.chintu.sellerhub.RoundedImageView
+            android:layout_height="130dp"
+            android:layout_width="130dp"
+            android:id="@+id/profile_pic"
+            android:src="@drawable/default_dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"                >
+
+        </com.example.chintu.sellerhub.RoundedImageView>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_pic"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="95dp"
+            android:id="@+id/profile_pic_edit"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/relative"
+        android:background="@drawable/round_shape">
+    <ToggleButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/toggle_selector"
+        android:id="@+id/toggle"
+        android:textOn=""
+        android:textOff=""
+        android:text=""
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/toggle"
+    android:text="Basic details"
+    android:id="@+id/basic_detail"
+    android:textSize="15dp"
+    android:textStyle="bold"
+    android:layout_margin="5dp"/>
+ <Button
+     android:layout_width="20dp"
+     android:layout_height="20dp"
+     android:layout_margin="5dp"
+     android:layout_alignParentRight="true"
+     android:layout_marginLeft="10dp"
+android:background="@drawable/edit"
+     android:id="@+id/basic"
+
+     />
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ael_expanded="false"
+        app:ael_duration="500"
+        android:padding="15dp"
+        app:ael_interpolator="bounce"
+        app:ael_orientation="vertical"
+        android:layout_below="@+id/toggle">
+
+        <TextView
+            android:id="@+id/f_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Name : "
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/f_name"
+            android:text="Mohit Chauhan"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/f_gender"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Gender : "
+            android:textSize="15dp"
+            android:layout_below="@+id/name"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/f_gender"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/f_DOB"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth : "
+            android:layout_below="@+id/gender"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/DOB"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="15/11/1997"
+            android:layout_below="@+id/gender"
+            android:layout_toRightOf="@+id/f_DOB"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/f_contact"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Contact No. : "
+            android:layout_below="@+id/DOB"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="8826521147"
+            android:layout_below="@+id/DOB"
+            android:layout_toRightOf="@+id/f_contact"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/f_email"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contact"
+            android:text="Email : "
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="mohitchauhan626@gmail.com"
+            android:layout_below="@+id/contact"
+            android:layout_toRightOf="@+id/f_email"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/f_address"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Address : "
+            android:layout_below="@+id/email"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="G-50/45/2B M.B. EXTN BADARPUR BOREDER NEW DELHI -110044"
+            android:textSize="15dp"
+            android:layout_below="@+id/email"
+            android:layout_toRightOf="@+id/f_address"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/f_description"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Description : "
+            android:layout_below="@+id/address"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="sjf dlfnsdknf dksfksnd jkdsfj kjdsffks jdlsfkjdf "
+            android:textSize="15dp"
+            android:layout_below="@+id/address"
+            android:layout_toRightOf="@+id/f_description"
+            android:layout_marginBottom="5dp"/>
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/Social_Details"
+        android:background="@drawable/round_shape">
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/toggle_selector"
+            android:id="@+id/toggle_social"
+            android:textOn=""
+            android:textOff=""
+            android:text=""
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toggle_social"
+            android:text="Social details"
+            android:id="@+id/social_details"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:id="@+id/social"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edit"
+
+            />
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/expandableLayout_social"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            android:padding="15dp"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            android:layout_below="@+id/toggle_social">
+
+            <TextView
+                android:id="@+id/f_fblink"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Facebook Link : "
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/fblink"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/f_fblink"
+                android:text="www.facebook.com/mohitchauhan626"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/f_instalink"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Instagram Link : "
+                android:textSize="15dp"
+                android:layout_below="@+id/fblink"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/instalink"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="www.instagram.com/mohitchauhan"
+                android:layout_below="@+id/fblink"
+                android:layout_toRightOf="@+id/f_instalink"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/f_twitterlink"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Twitter Link : "
+                android:layout_below="@+id/instalink"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/twitterlink"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="www.twitter.com/mohitchauhan"
+                android:layout_below="@+id/instalink"
+                android:layout_toRightOf="@+id/f_twitterlink"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/relative_bank"
+        android:background="@drawable/round_shape">
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/toggle_selector"
+            android:id="@+id/toggle_bank"
+            android:textOn=""
+            android:textOff=""
+            android:text=""
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toggle_bank"
+            android:text="Bank details"
+            android:id="@+id/bank_details"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:id="@+id/bank"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edit"
+
+            />
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/expandableLayout_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            android:padding="15dp"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            android:layout_below="@+id/toggle_bank">
+
+            <TextView
+                android:id="@+id/f_accountholdername"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="A/C Holder Name : "
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/accountholdername"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/f_accountholdername"
+                android:text="Mohit Chauhan"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/f_bankname"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Bank Name : "
+                android:textSize="15dp"
+                android:layout_below="@+id/accountholdername"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/bankname"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Punjab National Bank"
+                android:layout_below="@+id/accountholdername"
+                android:layout_toRightOf="@+id/f_bankname"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/f_ifsc"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="IFSC Code : "
+                android:layout_below="@+id/bankname"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/ifsc"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="PUNB089I0"
+                android:layout_below="@+id/bankname"
+                android:layout_toRightOf="@+id/f_ifsc"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/f_accountnumber"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Account No. : "
+                android:layout_below="@+id/ifsc"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/accountnumber"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="012000100728567"
+                android:layout_below="@+id/ifsc"
+                android:layout_toRightOf="@+id/f_accountnumber"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/relative_pickup"
+        android:background="@drawable/round_shape">
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/toggle_selector"
+            android:id="@+id/toggle_pickup"
+            android:textOn=""
+            android:textOff=""
+            android:text=""
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toggle_pickup"
+            android:text="Pickup location"
+            android:id="@+id/pickup_location"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
+        <Button
+            android:layout_width="20dp"
+            android:id="@+id/pickup"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edit"
+
+            />
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/expandableLayout_pickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            android:padding="15dp"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            android:layout_below="@+id/toggle_pickup">
+
+            <TextView
+                android:id="@+id/f_pickuplocation"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Pickup Location : "
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/pickuplocation"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/f_pickuplocation"
+                android:text="G-50/45/2B M.B. EXTN BADARPUR BOREDER NEW DELHI -110044"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/relative_login"
+        android:background="@drawable/round_shape">
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/toggle_selector"
+            android:id="@+id/toggle_login"
+            android:textOn=""
+            android:textOff=""
+            android:text=""
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toggle_login"
+            android:text="Login Details"
+            android:id="@+id/login_details"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/expandableLayout_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            android:padding="15dp"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            android:layout_below="@+id/toggle_login">
+
+            <TextView
+                android:id="@+id/f_username2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Username : "
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/username2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/f_username2"
+                android:text="MohitArtBirdz"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/resetpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset Password"
+                android:textColor="#132b96"
+                android:layout_below="@+id/f_username2"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>
+    </ScrollView>

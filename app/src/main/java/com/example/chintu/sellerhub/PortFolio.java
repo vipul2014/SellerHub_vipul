@@ -1,7 +1,6 @@
 package com.example.chintu.sellerhub;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -59,10 +58,8 @@ public class PortFolio extends AppCompatActivity implements View.OnClickListener
     }
 
     @Override
-    public void onClick(View v)
-    {
-        switch(v.getId())
-        {
+    public void onClick(View v) {
+        switch(v.getId()){
             case R.id.btn_p1:
                 FragmentActivity tab1 = new FragmentActivity();
                 break;

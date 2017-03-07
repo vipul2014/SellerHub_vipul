@@ -23,11 +23,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import org.json.JSONObject;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -41,6 +44,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+
 /**
  * Created by Vipul Chauhan on 1/30/2017.
  */
@@ -58,20 +62,26 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     AutoCompleteTextView email;
     AutoCompleteTextView phone;
     AutoCompleteTextView address;
+    AutoCompleteTextView postal;
+    AutoCompleteTextView city;
     RadioGroup gender;
     RadioButton rg_gender;
     ImageView userPic;
+    Spinner state_spin;
     Button getImage, next;
 
     TextView t;
 
 
-
-
-    String uri,artist_id;
+    String uri, artist_id;
 
     String e_name, e_email, e_phone, e_address, e_gender, e_userPic;
-    boolean dataAdd=false;
+    boolean dataAdd = false;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,16 +95,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         email = (AutoCompleteTextView) findViewById(R.id.tv_email);
         phone = (AutoCompleteTextView) findViewById(R.id.tv_phone);
         address = (AutoCompleteTextView) findViewById(R.id.tv_adress);
+        postal = (AutoCompleteTextView) findViewById(R.id.t_pin);
+        city = (AutoCompleteTextView) findViewById(R.id.t_city);
+        state_spin = (Spinner) findViewById(R.id.spin_state);
+
         gender = (RadioGroup) findViewById(R.id.rg_gender);
         userPic = (ImageView) findViewById(R.id.i_userpic);
 
         t = (TextView) findViewById(R.id.sample);
 
 
-
         getImage.setOnClickListener(this);
         next.setOnClickListener(this);
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -130,7 +146,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private void upload() {
         e_name = name.getText().toString();
         e_email = email.getText().toString();
-        e_address = address.getText().toString();
+        e_address = address.getText().toString().concat(city.getText().toString().concat(state_spin.toString().concat(postal.getText().toString())));
         e_phone = phone.getText().toString();
         int selectId = gender.getCheckedRadioButtonId();
         rg_gender = (RadioButton) findViewById(selectId);
@@ -164,7 +180,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         } else if ("".equals(e_address)) {
             address.setError("Enter the address");
             validation = false;
-        } else if ("".equals(e_email)||validemail(e_email)) {
+        } else if ("".equals(e_email) || validemail(e_email)) {
             email.setError("Enter valid email");
             validation = false;
         } else if ("".equals(e_phone)) {
@@ -178,13 +194,49 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     }
 
     private boolean validemail(String e_email) {
-        boolean sucess=true;
-        for(int i=0;i<e_email.length();i++){
-            if(e_email.charAt(i)=='@'){
-                sucess=false;
+        boolean sucess = true;
+        for (int i = 0; i < e_email.length(); i++) {
+            if (e_email.charAt(i) == '@') {
+                sucess = false;
             }
         }
         return sucess;
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("SignUp Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
     }
 
 
@@ -225,10 +277,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 IS.close();
                 //httpURLConnection.connect();
                 httpURLConnection.disconnect();
-                dataAdd=true;
+                dataAdd = true;
                 return "Updated";
             } catch (MalformedURLException e) {
-                Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG);
+                return "error";
             } catch (IOException e) {
                 e.printStackTrace();
 
@@ -260,7 +312,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void fetchID() {
-        if(dataAdd) {
+        if (dataAdd) {
             uri = "http://artbirdz.hol.es/sellerApp/registration/fetch_artist_id.php?email=" + e_email + "";
             new JsonTask().execute(uri);
 
@@ -279,6 +331,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             return false;
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == RESULT_LOAD_IMG) {
@@ -300,7 +353,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    private class JsonTask extends AsyncTask<String,String,String> {
+    private class JsonTask extends AsyncTask<String, String, String> {
         @Override
         protected String doInBackground(String... params) {
             HttpURLConnection connection = null;
@@ -325,18 +378,20 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             }
             return null;
         }
-            protected void onPostExecute(String result){
-                super.onPostExecute(result);
-                artist_id=result.substring(27,(result.length()-5));
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SignUp.this);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("artist_id", artist_id);
-                editor.commit();
-                Intent i= new Intent(SignUp.this,BankReg.class);
-                startActivity(i);
+
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            artist_id = result.substring(27, (result.length() - 5));
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SignUp.this);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("artist_id", artist_id);
+            editor.commit();
+            Intent i = new Intent(SignUp.this, BankReg.class);
+            startActivity(i);
         }
 
     }
+
 }
 
 
