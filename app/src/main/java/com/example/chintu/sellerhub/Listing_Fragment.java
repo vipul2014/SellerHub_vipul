@@ -17,23 +17,25 @@ import android.view.ViewGroup;
 public class Listing_Fragment  extends Fragment implements View.OnClickListener {
 
     ViewPager pager;
-    ViewPagerAdapter adapter;
+    Listing_ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[] = {"Product 1","Product 2","Product 3"};
+    CharSequence Titles[] = {"In Stock","Sold Out","Inactive"};
     int Numboftabs = 3;
 
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.port_folio_main, container, false);
-        adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager(), Titles, Numboftabs);
+        View view = inflater.inflate(R.layout.listing_activity, container, false);
+        getActivity().setTitle("Listing");
+        adapter = new Listing_ViewPagerAdapter(getActivity().getSupportFragmentManager(), Titles, Numboftabs);
+        tabs = (SlidingTabLayout)view.findViewById(R.id.listing_tab);
 
+        tabs.setSelectedIndicatorColors(getResources().getColor(R.color.white));
 
-
-        pager = (ViewPager)view.findViewById(R.id.v_pager);
+        pager = (ViewPager)view.findViewById(R.id.listing_v_pager);
         pager.setAdapter(adapter);
 
         // Assiging the Sliding Tab Layout View
-        tabs = (SlidingTabLayout)view.findViewById(R.id.tab);
+
         tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
 
@@ -46,7 +48,7 @@ return view;
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_p1:
-                FragmentActivity tab1 = new FragmentActivity();
+                Listing_Instock_fragment tab1 = new Listing_Instock_fragment();
                 break;
             case R.id.btn_p2:
                 FragmentTwo tab2 = new FragmentTwo();
