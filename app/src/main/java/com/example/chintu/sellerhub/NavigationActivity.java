@@ -107,8 +107,18 @@ public class NavigationActivity extends AppCompatActivity
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_listing) {
+            android.support.v4.app.Fragment fragment = null;
+            Class fragmentClass = null;
+            fragmentClass = Listing_Fragment.class;
+            try {
+                fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         } else if (id == R.id.nav_manage) {
 
         }

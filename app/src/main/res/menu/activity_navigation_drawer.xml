@@ -7,7 +7,7 @@
             android:icon="@drawable/collapse"
             android:title="Home" />
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_listing"
             android:icon="@drawable/listing_icon"
             android:title="Listing" />
         <item
