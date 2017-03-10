@@ -24,7 +24,7 @@ public class Listing_Fragment  extends Fragment implements View.OnClickListener 
 
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.listing_activity, container, false);
+        View view = inflater.inflate(R.layout.port_folio_main, container, false);
         adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager(), Titles, Numboftabs);
 
 

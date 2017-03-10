@@ -13,24 +13,42 @@ import android.widget.Spinner;
 
 public class BasicEdit extends AppCompatActivity {
 
-    EditText name,email,phone,address,city,postalCode;
-    RadioGroup gender;
-    Spinner state;
-    Button save;
+    EditText et_name,et_email,et_phone,et_address,et_city,et_postalCode;
+    RadioGroup rg_gender;
+    Spinner s_state;
+    Button btn_save;
+    String name,gender,DOB,contact,email,address,description;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_edit);
 
-        name=(EditText)findViewById(R.id.etbae_name);
-        email=(EditText)findViewById(R.id.etbae_email);
-        phone=(EditText)findViewById(R.id.etbae_phone);
-        address=(EditText)findViewById(R.id.etbae_address);
-        city=(EditText)findViewById(R.id.etbae_city);
-        postalCode=(EditText)findViewById(R.id.etbae_postal_code);
-        gender=(RadioGroup) findViewById(R.id.rg_gender);
-        state=(Spinner)findViewById(R.id.etbae_state);
-        save=(Button)findViewById(R.id.etbae_save);
+        et_name=(EditText)findViewById(R.id.etbae_name);
+        et_email=(EditText)findViewById(R.id.etbae_email);
+        et_phone=(EditText)findViewById(R.id.etbae_phone);
+        et_address=(EditText)findViewById(R.id.etbae_address);
+        et_city=(EditText)findViewById(R.id.etbae_city);
+        et_postalCode=(EditText)findViewById(R.id.etbae_postal_code);
+        rg_gender=(RadioGroup) findViewById(R.id.rg_gender);
+        s_state=(Spinner)findViewById(R.id.etbae_state);
+        btn_save=(Button)findViewById(R.id.etbae_save);
+
+        loadData();
+    }
+
+    private void loadData() {
+        name=getIntent().getStringExtra("name");
+        gender=getIntent().getStringExtra("gender");
+        DOB=getIntent().getStringExtra("DOB");
+        contact=getIntent().getStringExtra("contact");
+        description=getIntent().getStringExtra("descriptiom");
+        email=getIntent().getStringExtra("email");
+        address=getIntent().getStringExtra("address");
+        String AddressString = address;
+        String[] subAddress = AddressString.split(":");
+        et_address.setText(subAddress[0]); // this will contain "Fruit"
+        et_city.setText(subAddress[1]);
+        // this will contain " they taste good"
     }
 }
