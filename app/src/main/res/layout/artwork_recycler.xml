@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="#fff"
+    android:orientation="horizontal">
+
+   <com.android.volley.toolbox.NetworkImageView
+       android:layout_width="100dp"
+       android:layout_height="match_parent"
+       android:id="@+id/artwork_image_recycler"
+       android:src="@drawable/artwork"/>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/artwork_image_recycler"
+        android:layout_margin="10dp"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title of Artwork"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/artwork_title_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artwork Id : "
+            android:id="@+id/f_artwork_id_recycler"
+            android:layout_below="@+id/artwork_title_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0112234"
+            android:id="@+id/artwork_id_recycler"
+            android:layout_below="@+id/artwork_title_recycler"
+            android:layout_toRightOf="@+id/f_artwork_id_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/artwork_price_recycler"
+            android:layout_alignParentBottom="true"
+            android:text="Rs.22200"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/artwork_units_recycler"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="1 unit"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
