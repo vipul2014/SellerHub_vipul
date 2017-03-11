@@ -9,7 +9,7 @@
     android:background="#fff"
     android:orientation="horizontal">
 
-   <ImageView
+   <com.android.volley.toolbox.NetworkImageView
        android:layout_width="100dp"
        android:layout_height="match_parent"
        android:id="@+id/artwork_image_recycler"
@@ -37,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0112234"
+            android:id="@+id/artwork_id_recycler"
             android:layout_below="@+id/artwork_title_recycler"
             android:layout_toRightOf="@+id/f_artwork_id_recycler"/>
         <TextView
