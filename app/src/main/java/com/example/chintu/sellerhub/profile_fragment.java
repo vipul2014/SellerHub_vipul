@@ -1,9 +1,15 @@
 package com.example.chintu.sellerhub;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,6 +46,8 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
     String profilePic,name,gender,DOB,contact,email,address,description,fblink,instalink,twitterlink,accountholdername,bankname,ifsc,accountnumber,pickuplocation,username2;
     TextView tv_gender,tv_name,tv_DOB,tv_contact,tv_email,tv_address,tv_description,tv_fblink,tv_instalink,tv_twitterlink,tv_accountholdername,tv_bankname,tv_ifsc,tv_accountnumber,tv_pickuplocation,tv_username2;
     RoundedImageView im_profilePic;
+    Button picupload;
+    CoordinatorLayout coordinatorLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -67,11 +75,13 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
         tv_username2=(TextView)view.findViewById(R.id.username2);
         tv_ifsc=(TextView)view.findViewById(R.id.ifsc);
         im_profilePic=(RoundedImageView) view.findViewById(R.id.profile_pic);
+        picupload=(Button)view.findViewById(R.id.profile_pic_edit);
+        picupload.setOnClickListener(this);
+        coordinatorLayout=(CoordinatorLayout)view.findViewById(R.id.coordinatorLayout);
 
 
 
-
-        new GetProfile().execute();
+       // new GetProfile().execute();
 
 
 
@@ -182,7 +192,40 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
            getActivity().startActivity(i);
         }
 
+        if(view.getId()==R.id.profile_pic_edit){
+            FireMissilesDialogFragment fireMissilesDialogFragment=new FireMissilesDialogFragment();
+            fireMissilesDialogFragment.show(getFragmentManager(),"null");
+        }
 
+
+    }
+
+    static  public class FireMissilesDialogFragment extends DialogFragment {
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the Builder class for convenient dialog construction
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage("SELECT IMAGE")
+                    .setPositiveButton("CAMERA", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // FIRE ZE MISSILES!
+                        }
+                    })
+                    .setNegativeButton("GALLERY", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // User cancelled the dialog
+                        }
+                    });
+            builder.setNeutralButton("REMOVE",new DialogInterface.OnClickListener(){
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            // Create the AlertDialog object and return it
+            return builder.create();
+        }
     }
 
     private class GetProfile extends AsyncTask<Void,Void,Void>
