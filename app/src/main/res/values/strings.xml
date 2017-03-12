@@ -133,4 +133,43 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string-array name="category_arrays">
+        <item>Category</item>
+        <item>Digital Art</item>
+        <item>Drawing</item>
+        <item>Painting</item>
+        <item>Photography</item>
+        <item>Print Making</item>
+        <item>Handicraft</item>
+        <item>Sculpture</item>
+        <item>Serigraph</item>
+        <item>Textile</item>
+    </string-array>
+    <string-array name="style_arrays">
+        <item>Style</item>
+        <item>Abstract</item>
+        <item>Art Deco</item>
+        <item>Conceptual</item>
+        <item>Cubism</item>
+        <item>Decorative</item>
+        <item>Digital</item>
+        <item>Expressionism</item>
+        <item>Fantasy</item>
+        <item>Folk</item>
+        <item>Futurism</item>
+        <item>Geometrical</item>
+        <item>Illustration</item>
+        <item>Image</item>
+        <item>Impressionism</item>
+        <item>Minimalism</item>
+        <item>Naive</item>
+        <item>Pop Art</item>
+        <item>Photorealism</item>
+        <item>Realism</item>
+        <item>Surrealism</item>
+        <item>Traditional</item>
+        <item>Tribal</item>
+
+    </string-array>
+
 </resources>

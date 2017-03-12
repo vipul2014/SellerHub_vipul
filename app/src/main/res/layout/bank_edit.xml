@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e5e5"
     >
+    <include layout="@layout/toolbar"/>
 <ScrollView
     android:padding="15dp"
     android:layout_width="match_parent"
@@ -15,7 +16,8 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
         <TextView
             android:layout_marginTop="50dp"
             android:layout_width="match_parent"
