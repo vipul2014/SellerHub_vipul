@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/collapse"
+            android:icon="@drawable/home_icon"
             android:title="Home" />
         <item
             android:id="@+id/nav_listing"
@@ -22,10 +22,20 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/return_icon"
             android:title="Return" />
+
+    </group>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/profile_icon"
             android:title="Profile" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout" />
+
     </group>
 
 

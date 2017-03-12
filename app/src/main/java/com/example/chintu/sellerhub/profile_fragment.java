@@ -188,7 +188,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.basic) {
+       /* if (view.getId() == R.id.basic) {
             Intent i = new Intent(getActivity(), BasicEdit.class);
             i.putExtra("name", name);
             i.putExtra("gender", gender);
@@ -217,7 +217,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
             FireMissilesDialogFragment fireMissilesDialogFragment = new FireMissilesDialogFragment();
             fireMissilesDialogFragment.show(getFragmentManager(), "null");
         }
-
+*/
 
     }
 
