@@ -70,7 +70,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
     public static final int MEDIA_TYPE_IMAGE = 1;
     public static final int RESULT_LOAD_IMG = 2;
 
-    private static final String IMAGE_DIRECTORY_NAME = "Port folio";
+    private static final String IMAGE_DIRECTORY_NAME = "ARTBIRDS";
     static  public Uri fileUri;
     String imgDecodableString;
 
