@@ -48,7 +48,7 @@ public class Listing_SoldOut_fragment extends Fragment implements View.OnClickLi
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view_artwork);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-       loadMalls("http://mohit.hol.es/HeadLines/fetchNews.php");
+      // loadMalls("http://mohit.hol.es/HeadLines/fetchNews.php");
         return v;
     }
 
