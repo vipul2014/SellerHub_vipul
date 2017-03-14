@@ -141,6 +141,7 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
             }
             else if(img_set[1]==1){
                 big_img_ref=1;
+                ;
                 img_bit=img_bitmap[1];
                 imgbig.setImageBitmap(img_bitmap[1]);
             }
