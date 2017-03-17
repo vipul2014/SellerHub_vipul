@@ -310,6 +310,7 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
                 params.put("packing",e_packing);
                 params.put("description",e_description);
                 params.put("sellingprice",e_sellingprice);
+                params.put("artist_id",artistid);
 
 
                 //returning parameters

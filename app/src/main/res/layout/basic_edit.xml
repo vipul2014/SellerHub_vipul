@@ -104,6 +104,24 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="DOB"
+                android:textColor="@color/dark_brown"
+                android:textSize="18sp"
+                />
+            <EditText
+                android:id="@+id/etbae_dob"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableBottom="@drawable/underline"
+                android:textSize="24sp"
+                android:inputType="date"
+                />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Phone No."
                 android:textColor="@color/dark_brown"
                 android:textSize="18sp"
