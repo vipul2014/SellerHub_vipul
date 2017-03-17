@@ -3,6 +3,7 @@ package com.example.chintu.sellerhub;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,13 +14,13 @@ import android.widget.Spinner;
  * Created by Vipul Chauhan on 2/23/2017.
  */
 
-public class BasicEdit extends AppCompatActivity implements View.OnClickListener{
+public class BasicEdit extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
 
     EditText et_name,et_email,et_phone,et_address,et_city,et_postalCode;
     RadioGroup rg_gender;
     Spinner s_state;
     Button btn_save;
-    String name,gender,DOB,contact,email,address,description;
+    String name,gender,DOB,contact,email,address,description,state,postal_code;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class BasicEdit extends AppCompatActivity implements View.OnClickListener
         loadData();
 
         btn_save.setOnClickListener(this);
+        s_state.setOnItemSelectedListener(this);
     }
 
     private void loadData() {
@@ -51,6 +53,7 @@ public class BasicEdit extends AppCompatActivity implements View.OnClickListener
         description=getIntent().getStringExtra("descriptiom");
         email=getIntent().getStringExtra("email");
         address=getIntent().getStringExtra("address");
+
         String AddressString = address;
         String[] subAddress = AddressString.split(":");
         et_address.setText(subAddress[0]);
@@ -77,6 +80,25 @@ public class BasicEdit extends AppCompatActivity implements View.OnClickListener
 
     private void convertString() {
         name=et_name.getText().toString();
+        email=et_email.getText().toString();
+        contact=et_phone.getText().toString();
+        StringBuilder builder=new StringBuilder();
+        String delimiter=":";
+        address=et_address.getText().toString();
+        String city=et_city.getText().toString();
+
+        builder.append(address,)
+
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        state=parent.getSelectedItem().toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

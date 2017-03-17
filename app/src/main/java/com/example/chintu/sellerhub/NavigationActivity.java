@@ -1,6 +1,8 @@
 package com.example.chintu.sellerhub;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +15,7 @@ import android.view.MenuItem;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    static String artistid;
     DrawerLayout drawer;
     android.support.v4.app.Fragment fragment = null;
     Class fragmentClass = null;
@@ -43,6 +46,8 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        final SharedPreferences mSharedPreference = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        artistid = (mSharedPreference.getString("artist_id", "Default_Value"));
     }
 
     @Override
