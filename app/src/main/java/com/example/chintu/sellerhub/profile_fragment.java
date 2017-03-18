@@ -61,7 +61,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
     ProgressDialog pDialog;
     private String TAG = profile_fragment.class.getSimpleName();
     String profilePic, name, gender, DOB, contact, email, address, description, fblink, instalink, twitterlink, accountholdername, bankname, ifsc, accountnumber, pickuplocation, username2;
-    TextView tv_gender, tv_name, tv_DOB, tv_contact, tv_email, tv_address, tv_description, tv_fblink, tv_instalink, tv_twitterlink, tv_accountholdername, tv_bankname, tv_ifsc, tv_accountnumber, tv_pickuplocation, tv_username2;
+    TextView tv_gender, tv_name, tv_DOB, tv_contact, tv_email, tv_address, tv_description, tv_fblink, tv_instalink, tv_twitterlink, tv_accountholdername, tv_bankname, tv_ifsc, tv_accountnumber, tv_pickuplocation, tv_username2,tv_resetpassword;
     RoundedImageView im_profilePic;
     Button picupload;
     CoordinatorLayout coordinatorLayout;
@@ -99,6 +99,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
         tv_pickuplocation = (TextView) view.findViewById(R.id.pickup_location);
         tv_username2 = (TextView) view.findViewById(R.id.username2);
         tv_ifsc = (TextView) view.findViewById(R.id.ifsc);
+        tv_resetpassword=(TextView)view.findViewById(R.id.resetpassword) ;
         im_profilePic = (RoundedImageView) view.findViewById(R.id.profile_pic);
         picupload = (Button) view.findViewById(R.id.profile_pic_edit);
         picupload.setOnClickListener(this);
@@ -122,6 +123,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
         Social_detail.setOnClickListener(this);
         Bank_detail.setOnClickListener(this);
         Pickup_location.setOnClickListener(this);
+        tv_resetpassword.setOnClickListener(this);
 
         expandableLayout.collapse();
         expandablelayout_social.collapse();
@@ -188,7 +190,7 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-       /* if (view.getId() == R.id.basic) {
+       if (view.getId() == R.id.basic) {
             Intent i = new Intent(getActivity(), BasicEdit.class);
             i.putExtra("name", name);
             i.putExtra("gender", gender);
@@ -217,7 +219,18 @@ public class profile_fragment extends Fragment implements View.OnClickListener {
             FireMissilesDialogFragment fireMissilesDialogFragment = new FireMissilesDialogFragment();
             fireMissilesDialogFragment.show(getFragmentManager(), "null");
         }
-*/
+        if (view.getId() == R.id.social) {
+            Intent i = new Intent(getActivity(), SocialEdit.class);
+            i.putExtra("fb",fblink );
+            i.putExtra("insta",instalink );
+            i.putExtra("twitter",twitterlink );
+            getActivity().startActivity(i);
+        }
+        if (view.getId() == R.id.resetpassword) {
+            Intent i = new Intent(getActivity(), PasswordReset.class);
+            getActivity().startActivity(i);
+        }
+
 
     }
 
