@@ -26,12 +26,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".main"/>
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".PortFolio"></activity>
-        <activity android:name=".BankEdit"></activity>
+        <activity android:name=".SignUp"
+            android:label="Personal Details"
+            android:parentActivityName=".main"></activity>
+        <activity android:name=".PortFolio"
+            android:label="Portfolio"
+            android:parentActivityName=".BankReg"></activity>
+        <activity android:name=".BankEdit"
+            android:label="Edit Bank Details"></activity>
         <activity android:name=".BasicEdit"></activity>
         <activity android:name=".PickupEdit"></activity>
-        <activity android:name=".BankReg"></activity>
+        <activity android:name=".BankReg"
+            android:label="Bank Details"
+            android:parentActivityName=".SignUp"></activity>
         <activity android:name=".NavigationActivity"></activity>
 
     </application>
