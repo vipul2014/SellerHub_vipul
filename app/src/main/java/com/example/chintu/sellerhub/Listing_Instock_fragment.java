@@ -29,9 +29,6 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-/**
- * Created by hp lap on 11-03-2017.
- */
 
 public class Listing_Instock_fragment extends Fragment implements View.OnClickListener {
     private RecyclerView recyclerView;
@@ -163,7 +160,7 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
             }
 
             viewHolder.locality.setText(mallsListBean.getAddress());
-*/
+            */
             // viewHolder.txtViewTitle.setTag(R.string.mallIdTag, mallsListBean.getMallId());
 
 

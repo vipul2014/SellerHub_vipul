@@ -18,6 +18,8 @@ public class main extends AppCompatActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
         signUp= (Button)findViewById(R.id.signup_bttn);
         login= (Button)findViewById(R.id.btn_login);
         signUp.setOnClickListener(this);

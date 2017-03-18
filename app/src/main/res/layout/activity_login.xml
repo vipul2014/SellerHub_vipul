@@ -17,7 +17,7 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-
+    <include layout="@layout/toolbar"/>
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
@@ -28,7 +28,8 @@
             android:background="#fff"
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
 
             <ImageView
                 android:layout_width="200dp"
