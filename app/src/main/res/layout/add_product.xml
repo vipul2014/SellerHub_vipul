@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e5e5"
     >
+    <include layout="@layout/toolbar"/>
     <ScrollView
         android:padding="15dp"
         android:layout_width="match_parent"
@@ -121,6 +122,23 @@
                 </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                >
+            <AutoCompleteTextView
+                android:id="@+id/act_stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Stock"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+            </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,7 +232,7 @@
                     android:id="@+id/act_sellingprice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Selling Price"
+                    android:hint="MRP(Maximum Retail Price)"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:inputType="number"
