@@ -1,7 +1,9 @@
 package com.example.chintu.sellerhub;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -9,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * Created by hp lap on 10-03-2017.
@@ -17,6 +20,7 @@ import android.view.ViewGroup;
 public class Listing_Fragment  extends Fragment implements View.OnClickListener {
 
     ViewPager pager;
+    Button add_product_btn;
     Listing_ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
     CharSequence Titles[] = {"In Stock","Sold Out","Inactive"};
@@ -28,6 +32,14 @@ public class Listing_Fragment  extends Fragment implements View.OnClickListener 
         getActivity().setTitle("Listing");
         adapter = new Listing_ViewPagerAdapter(getActivity().getSupportFragmentManager(), Titles, Numboftabs);
         tabs = (SlidingTabLayout)view.findViewById(R.id.listing_tab);
+        FloatingActionButton myFab = (FloatingActionButton) view.findViewById(R.id.fab_addproduct);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AddProduct.class);
+                getActivity().startActivity(i);
+            }
+        });
+
 
         tabs.setSelectedIndicatorColors(getResources().getColor(R.color.white));
 
@@ -47,6 +59,8 @@ return view;
     @Override
     public void onClick(View v) {
         switch(v.getId()){
+
+
             case R.id.btn_p1:
                 Listing_Instock_fragment tab1 = new Listing_Instock_fragment();
                 break;
