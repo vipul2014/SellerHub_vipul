@@ -61,7 +61,7 @@
                     android:id="@+id/big_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/logo"
+                    android:src="@drawable/abc"
 
                     />
                     <Button
@@ -73,7 +73,7 @@
                         android:layout_alignParentRight="true"/>
                 </RelativeLayout>
 
-                <HorizontalScrollView
+                <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <LinearLayout
@@ -82,14 +82,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:orientation="horizontal"
-
+                    android:scrollbars="horizontal"
                     >
                     <ImageView
                         android:id="@+id/img1"
                         android:layout_marginTop="5dp"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/logo"/>
+                        android:src="@drawable/abc"/>
 
                     <ImageView
                         android:id="@+id/img2"
@@ -97,30 +97,30 @@
                         android:layout_marginLeft="5dp"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/logo"/>
+                        android:src="@drawable/abc"/>
                     <ImageView
                         android:id="@+id/img3"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/logo"/>
+                        android:src="@drawable/abc"/>
                     <ImageView
                         android:id="@+id/img4"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/logo"/>
+                        android:src="@drawable/abc"/>
                     <ImageView
                         android:id="@+id/img5"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/logo"/>
+                        android:src="@drawable/abc"/>
                 </LinearLayout>
-                </HorizontalScrollView>
+                </ScrollView>
             </LinearLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
