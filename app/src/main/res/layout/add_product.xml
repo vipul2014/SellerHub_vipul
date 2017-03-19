@@ -82,7 +82,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:orientation="horizontal"
-
                         >
                         <ImageView
                             android:id="@+id/img1"
@@ -164,7 +163,37 @@
                     android:id="@+id/act_size"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Size (LxB)(LxBxH for Handicraft/Sculpture)"
+                    android:hint="Length(in cm)"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Breadth(in cm)"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Height(in cm)(enter zero if not applicable)"
                     android:maxLines="1"
                     android:singleLine="true"
                     />
@@ -232,7 +261,7 @@
                     android:id="@+id/act_sellingprice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="MRP(Maximum Retail Price)"
+                    android:hint="Final Selling Price"
                     android:maxLines="1"
                     android:singleLine="true"
                     android:inputType="number"

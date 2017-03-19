@@ -211,16 +211,20 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
                     }}
                 break;
             case R.id.img5:
-                if(img_stat[3]==1){
-                    if(img_set[4]==0){
+                if(img_stat[3]==1)
+                {
+                    if(img_set[4]==0)
+                    {
                         ref=4;
                         alert();
                     }
-                    else if(img_set[4]==1){
+                    else if(img_set[4]==1)
+                    {
                         big_img_ref=4;
                         img_bit=img_bitmap[4];
                         imgbig.setImageBitmap(img_bitmap[4]);
-                    }}
+                    }
+                }
                 break;
             case R.id.btn_save:
                 getData();
@@ -228,7 +232,8 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
 
         }
     }
-    public String getStringImage(Bitmap bmp){
+    public String getStringImage(Bitmap bmp)
+    {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] imageBytes = baos.toByteArray();
@@ -236,7 +241,8 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
         return encodedImage;
     }
 
-    private void getData() {
+    private void getData()
+    {
         e_title=et_title.getText().toString();
         e_surface=et_surface.getText().toString();
         e_size=et_size.getText().toString();
@@ -246,11 +252,14 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
         int selectId = rg_packing.getCheckedRadioButtonId();
         pack = (RadioButton) findViewById(selectId);
         e_packing = pack.getText().toString();
-        for(i=0;i<5;i++){
-            if(img_set[i]==1){
+        for(i=0;i<5;i++)
+        {
+            if(img_set[i]==1)
+            {
                 e_img[i]=getStringImage(img_bitmap[i]);
             }
-            else{
+            else
+            {
                 e_img[i]="null";
             }
         }

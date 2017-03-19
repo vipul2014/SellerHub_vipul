@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e5e5"
+    >
+    <include layout="@layout/sv_toolbar"/>
+    <ScrollView
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            >
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Category"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+            <Spinner
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/category_arrays">
+            </Spinner>
+            <TextView
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Style"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+            <Spinner
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/style_arrays">
+            </Spinner>
+
+            <TextView
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Surface(Medium)"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+            <EditText
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:drawableBottom="@drawable/underline"
+                android:textSize="24sp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
