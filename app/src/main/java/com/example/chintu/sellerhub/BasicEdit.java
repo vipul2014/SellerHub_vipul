@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -38,7 +39,8 @@ import static com.example.chintu.sellerhub.R.id.ifsc;
  * Created by Vipul Chauhan on 2/23/2017.
  */
 
-public class BasicEdit extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
+public class BasicEdit extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener
+{
 
     EditText et_name,et_email,et_phone,et_address,et_city,et_postalCode,et_dob;
     RadioGroup rg_gender;
@@ -49,7 +51,14 @@ public class BasicEdit extends AppCompatActivity implements View.OnClickListener
     ProgressDialog progressDialog;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_edit);
 

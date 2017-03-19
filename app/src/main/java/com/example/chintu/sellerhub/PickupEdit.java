@@ -2,13 +2,12 @@ package com.example.chintu.sellerhub;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-/**
- * Created by Vipul Chauhan on 2/23/2017.
- */
+
 
 public class PickupEdit extends AppCompatActivity {
 
@@ -17,7 +16,14 @@ public class PickupEdit extends AppCompatActivity {
     Button save;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pickup_edit);
         flat=(EditText)findViewById(R.id.etpe_flat);

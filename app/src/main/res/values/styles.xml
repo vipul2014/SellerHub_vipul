@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#ed450d</item>
+        <item name="colorAccent">#fff</item>
     </style>
 
     <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light" />
