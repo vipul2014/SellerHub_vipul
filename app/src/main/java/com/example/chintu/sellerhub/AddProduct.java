@@ -110,11 +110,6 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
         img[4].setOnClickListener(this);
         s_category.setOnItemSelectedListener(this);
         s_style.setOnItemSelectedListener(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
     }

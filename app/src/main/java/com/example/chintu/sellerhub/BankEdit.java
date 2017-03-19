@@ -46,11 +46,6 @@ public class BankEdit extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bank_edit);
         et_accNo=(EditText)findViewById(R.id.etbe_accNo);

@@ -53,11 +53,6 @@ public class BasicEdit extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_edit);
