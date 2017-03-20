@@ -4,8 +4,8 @@ package com.example.chintu.sellerhub;
 import java.util.ArrayList;
 
 public class Listing_Recycler_DataCollect {
-    int ID,units,price;
-    String title,product_img;
+    int ID,units;
+    String title,product_img,price;
 
     public int getUnits() {
         return units;
@@ -15,11 +15,11 @@ public class Listing_Recycler_DataCollect {
         this.units = units;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

@@ -30,7 +30,6 @@ import org.json.JSONObject;
 import java.util.List;
 
 
-
 public class Listing_Inactive_fragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private AQuery aQuery;
@@ -47,7 +46,7 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view_artwork);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-       // loadMalls("http://mohit.hol.es/HeadLines/fetchNews.php");
+       loadMalls("http://artbirdz.hol.es/Artbirdz%20seller%20hub/Active_Listin.php");
         return v;
     }
     private void loadMalls(String url) {
@@ -125,10 +124,10 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
             // MallsListBean storeBean = mallsList.get(position);
             final Listing_Recycler_DataCollect tutorListBeans = ListData.get(position);
 
-            viewHolder.title.setText(tutorListBeans.getTitle());
-            viewHolder.ID.setText(tutorListBeans.getID());
+            viewHolder.title.setText(String.valueOf(tutorListBeans.getTitle()));
+            viewHolder.ID.setText(String.valueOf(tutorListBeans.getID()));
             viewHolder.Price.setText(tutorListBeans.getPrice());
-            viewHolder.Units.setText(tutorListBeans.getUnits());
+            viewHolder.Units.setText(String.valueOf(tutorListBeans.getUnits()));
 
 
             String url =tutorListBeans.getProduct_img();

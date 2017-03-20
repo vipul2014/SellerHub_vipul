@@ -18,6 +18,7 @@ public class ConversionHelper {
         try {
             JSONArray mallsListArray = jObject.getJSONArray("server_response");
 
+
             List<Listing_Recycler_DataCollect> tutorregister = new ArrayList<>();
             for (int i = 0; i < mallsListArray.length(); i++) {
                 JSONObject tutorjson = mallsListArray.getJSONObject(i);
@@ -35,10 +36,10 @@ public class ConversionHelper {
     private static Listing_Recycler_DataCollect getcomments(JSONObject jObject) throws JSONException {
         Listing_Recycler_DataCollect tutorData = new Listing_Recycler_DataCollect();
 
-        tutorData.setTitle(jObject.getString("image"));
-        tutorData.setID(jObject.getInt("ID"));
-        tutorData.setPrice(jObject.getInt("image"));
-        tutorData.setUnits(jObject.getInt("image"));
+        tutorData.setTitle(jObject.getString("title"));
+        tutorData.setID(jObject.getInt("id"));
+        tutorData.setPrice(jObject.getString("price"));
+        tutorData.setUnits(jObject.getInt("stock"));
         tutorData.setProduct_img(jObject.getString("image"));
 
 
