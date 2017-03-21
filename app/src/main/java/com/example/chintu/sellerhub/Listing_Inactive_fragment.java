@@ -145,6 +145,14 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
                             : R.anim.down_from_top);
             viewHolder.itemView.startAnimation(animation);
             lastPosition = position;
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getContext(),"clicked="+ String.valueOf(tutorListBeans.getTitle()) ,Toast.LENGTH_SHORT).show();
+
+                }
+            });
             //viewHolder.storeCount.setText(mallsListBean.getStoreCount() + " Stores");
 
             /*DecimalFormat df = new DecimalFormat("#.#");

@@ -13,8 +13,8 @@
        android:layout_width="120dp"
        android:layout_height="match_parent"
        android:id="@+id/artwork_image_recycler"
-       android:scaleType="fitCenter"
-       android:src="@drawable/artwork"/>
+       android:scaleType="fitXY"
+       />
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
@@ -32,30 +32,60 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="10dp"
             android:text="Artwork Id : "
             android:id="@+id/f_artwork_id_recycler"
             android:layout_below="@+id/artwork_title_recycler"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="10dp"
+
             android:text="0112234"
             android:id="@+id/artwork_id_recycler"
             android:layout_below="@+id/artwork_title_recycler"
             android:layout_toRightOf="@+id/f_artwork_id_recycler"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/artwork_fprice_recycler"
+                android:textSize="20dp"
+
+                android:text=" ₹ "/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/artwork_price_recycler"
+            android:textSize="20dp"
+
+            android:text="22200"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="Rs.22200"/>
+            android:layout_alignParentRight="true"
+            >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:id="@+id/artwork_units_recycler"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="1 unit"/>
+            android:text="1 "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/artwork_funits_recycler"
+                android:textSize="15dp"
+                android:text=" Unit(s)"/>
+
+        </LinearLayout>
     </RelativeLayout>
 
 
