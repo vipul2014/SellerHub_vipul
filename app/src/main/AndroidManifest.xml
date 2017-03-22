@@ -27,19 +27,19 @@
         </activity>
         <activity android:name=".AddProduct"/>
         <activity android:name=".Listing_product_view"/>
-        <activity android:name=".SignUp"
+        <activity android:name=".registration_module.SignUp"
             android:label="Personal Details"
             android:parentActivityName=".main"></activity>
-        <activity android:name=".PortFolio"
+        <activity android:name=".registration_module.PortFolio"
             android:label="Portfolio"
-            android:parentActivityName=".BankReg"></activity>
+            android:parentActivityName=".registration_module.BankReg"></activity>
         <activity android:name=".BankEdit"
             android:label="Edit Bank Details"></activity>
         <activity android:name=".BasicEdit"></activity>
         <activity android:name=".PickupEdit"></activity>
-        <activity android:name=".BankReg"
+        <activity android:name=".registration_module.BankReg"
             android:label="Bank Details"
-            android:parentActivityName=".SignUp"></activity>
+            android:parentActivityName=".registration_module.SignUp"></activity>
         <activity android:name=".NavigationActivity"></activity>
 
     </application>

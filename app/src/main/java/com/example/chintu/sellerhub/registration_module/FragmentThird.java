@@ -1,4 +1,4 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.registration_module;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -18,7 +18,6 @@ import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +28,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.chintu.sellerhub.R;
 
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -49,7 +50,7 @@ import java.util.Locale;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
-import static com.example.chintu.sellerhub.FragmentActivity.*;
+import static com.example.chintu.sellerhub.registration_module.FragmentActivity.*;
 
 public class FragmentThird extends Fragment implements View.OnClickListener{
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE=100;

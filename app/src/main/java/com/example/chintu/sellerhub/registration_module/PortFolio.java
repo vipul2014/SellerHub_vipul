@@ -1,4 +1,4 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.registration_module;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -6,6 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.chintu.sellerhub.R;
+import com.example.chintu.sellerhub.SlidingTabLayout;
+import com.example.chintu.sellerhub.ViewPagerAdapter;
+import com.example.chintu.sellerhub.registration_module.FragmentActivity;
+import com.example.chintu.sellerhub.registration_module.FragmentTwo;
 
 /**
  * Created by Vipul Chauhan on 2/8/2017.

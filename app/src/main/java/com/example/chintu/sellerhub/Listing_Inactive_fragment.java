@@ -36,6 +36,7 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
     private List<Listing_Recycler_DataCollect> ListData;
     private Listing_Inactive_fragment.MyAdapter mAdapter;
     private ImageLoader imageLoader;
+    TextView artwork_no;
     public int lastPosition=-1;
 
     @Nullable
@@ -43,6 +44,7 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_listing, container, false);
         aQuery = new AQuery(getActivity());
+         artwork_no=(TextView)v.findViewById(R.id.artwork);
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view_artwork);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -65,6 +67,7 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
                     if (json != null) {
                         ListData = ConversionHelper.getcomment(json);
                         mAdapter = new Listing_Inactive_fragment.MyAdapter();
+                        artwork_no.setText(String.valueOf(mAdapter.getItemCount()));
                         recyclerView.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
 
@@ -149,6 +152,8 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //www.worldbestlearningcenter.com/tips/Android-send-intent-from-fragment-to-activity.htm
+                    //for data transfer from fragment to activity
                     Toast.makeText(getContext(),"clicked="+ String.valueOf(tutorListBeans.getTitle()) ,Toast.LENGTH_SHORT).show();
 
                 }

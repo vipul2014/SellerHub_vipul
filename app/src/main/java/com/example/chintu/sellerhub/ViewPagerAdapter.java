@@ -4,6 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.example.chintu.sellerhub.registration_module.FragmentActivity;
+import com.example.chintu.sellerhub.registration_module.FragmentThird;
+import com.example.chintu.sellerhub.registration_module.FragmentTwo;
+
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 

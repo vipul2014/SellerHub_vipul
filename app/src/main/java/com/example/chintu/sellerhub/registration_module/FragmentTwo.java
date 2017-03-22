@@ -1,4 +1,4 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.registration_module;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,8 +11,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +21,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.chintu.sellerhub.R;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -32,8 +32,7 @@ import java.util.Locale;
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 
-public class FragmentActivity extends Fragment implements View.OnClickListener
-{
+public class FragmentTwo extends Fragment implements View.OnClickListener {
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE=100;
     public static final int MEDIA_TYPE_IMAGE=1;
     public static final int RESULT_LOAD_IMG=2;
@@ -43,40 +42,34 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
     String imgDecodableString;
 
     Button next, get_cam, get_gal;
-    EditText p1_title, p1_desc;
-    ImageView p1_image;
+    EditText p2_title, p2_desc;
+    ImageView p2_image;
 
-    Bitmap bitmap1;
+    Bitmap bitmap2;
 
     static String e_desc,e_img,e_title;
 
-
-
     @Nullable
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_first, container, false);
-        next = (Button) v.findViewById(R.id.btn_p1);
+        View v = inflater.inflate(R.layout.fragment_second, container, false);
+        setRetainInstance(true);
 
-
-        get_cam=(Button)v.findViewById(R.id.camera_btn1);
-        get_gal=(Button)v.findViewById(R.id.galry_btn1);
-        p1_image=(ImageView)v.findViewById(R.id.p1_image);
-        p1_title=(EditText)v.findViewById(R.id.p1_title);
-        p1_desc=(EditText)v.findViewById(R.id.p1_desc);
+        next = (Button) v.findViewById(R.id.btn_p2);
+        get_cam=(Button)v.findViewById(R.id.camera_btn2);
+        get_gal=(Button)v.findViewById(R.id.galry_btn2);
+        p2_image=(ImageView)v.findViewById(R.id.p2_img);
+        p2_title=(EditText)v.findViewById(R.id.p2_title);
+        p2_desc=(EditText)v.findViewById(R.id.p2_desc);
         next.setOnClickListener(this);
         get_gal.setOnClickListener(this);
         get_cam.setOnClickListener(this);
         return v;
-
-
     }
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("img1",e_img);
+        outState.putString("img2",e_img);
     }
 
     @Override
@@ -85,8 +78,8 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
         if(savedInstanceState!=null){
             e_img=savedInstanceState.getString("img2","null");
             byte[] decodedString = Base64.decode(e_img, Base64.DEFAULT);
-            bitmap1 = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-            p1_image.setImageBitmap(bitmap1);
+            bitmap2 = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            p2_image.setImageBitmap(bitmap2);
         }
     }
 
@@ -103,13 +96,13 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
 
     }
     private void sendData() {
-        Bitmap bitmap = ((BitmapDrawable) p1_image.getDrawable()).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) p2_image.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] imageBytes = baos.toByteArray();
         e_img = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        e_desc=p1_desc.getText().toString();
-        e_title=p1_title.getText().toString();
+        e_desc=p2_desc.getText().toString();
+        e_title=p2_title.getText().toString();
         //if(validation()) {
         //EventBus.getDefault().post(new Frag2(e_title,e_desc,e_img));
         //}
@@ -118,10 +111,10 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
     private boolean validation() {
         boolean validation = true;
         if ("".equals(e_title)) {
-            p1_title.setError("Enter Title");
+            p2_title.setError("Enter Title");
             validation = false;
         } else if ("".equals(e_desc)) {
-            p1_desc.setError("Enter the description");
+            p2_desc.setError("Enter the description");
             validation = false;
         }
 
@@ -164,7 +157,7 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
                 cursor.close();
-                p1_image.setImageBitmap(BitmapFactory
+                p2_image.setImageBitmap(BitmapFactory
                         .decodeFile(imgDecodableString));
             }
             else
@@ -179,7 +172,7 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 8;
             final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(), options);
-            p1_image.setImageBitmap(bitmap);
+            p2_image.setImageBitmap(bitmap);
         }
         catch(NullPointerException e){
             e.printStackTrace();
@@ -206,9 +199,9 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
         return mediaFile;
 
     }
-    static class Frag1{
+    static class Frag2{
 
-        Frag1(){
+        Frag2(){
 
         }
         static  public String getdesc(){
@@ -223,7 +216,3 @@ public class FragmentActivity extends Fragment implements View.OnClickListener
     }
 
 }
-
-
-
-

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.chintu.sellerhub.registration_module.SignUp;
+
 
 public class main extends AppCompatActivity implements View.OnClickListener
 {
