@@ -61,14 +61,15 @@
                         android:id="@+id/big_1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/logo"
+                        android:src="@drawable/default_product"
 
                         />
                     <Button
                         android:id="@+id/btn_getpic"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/edit_pic"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/edit"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentRight="true"/>
                 </RelativeLayout>
@@ -88,7 +89,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/logo"/>
+                            android:src="@drawable/default_product"/>
 
                         <ImageView
                             android:id="@+id/img2"
@@ -96,28 +97,28 @@
                             android:layout_marginLeft="5dp"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/logo"/>
+                            android:src="@drawable/default_product"/>
                         <ImageView
                             android:id="@+id/img3"
                             android:layout_marginTop="5dp"
                             android:layout_marginLeft="5dp"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/logo"/>
+                            android:src="@drawable/default_product"/>
                         <ImageView
                             android:id="@+id/img4"
                             android:layout_marginTop="5dp"
                             android:layout_marginLeft="5dp"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/logo"/>
+                            android:src="@drawable/default_product"/>
                         <ImageView
                             android:id="@+id/img5"
                             android:layout_marginTop="5dp"
                             android:layout_marginLeft="5dp"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/logo"/>
+                            android:src="@drawable/default_product"/>
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>

@@ -84,7 +84,18 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
         img_stat[0]=img_stat[1]=img_stat[2]=img_stat[3]=img_stat[4]=img_stat[5]=0;
         big_img_ref=0;
         ref=0;
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                                                 @Override
+                                                 public void onClick(View v) {
+                                                     finish();
+                                                 }
+                                             });
+        setTitle("Ädd Product");
         et_title=(AutoCompleteTextView) findViewById(R.id.act_title);
         et_surface=(AutoCompleteTextView) findViewById(R.id.act_surface);
         et_size=(AutoCompleteTextView) findViewById(R.id.act_size);
@@ -132,13 +143,13 @@ public class AddProduct extends AppCompatActivity implements View.OnClickListene
                                         img[i].setImageBitmap(img_bitmap[i]);
                                     }
                                     img_stat[i]=0;
-                                    img_bitmap[i]= BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+                                    img_bitmap[i]= BitmapFactory.decodeResource(getResources(), R.drawable.default_product);
                                     img[i].setImageBitmap(img_bitmap[i]);
                                     img_set[i]=0;
                                 }
 
                                 else{
-                                    img_bit=BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+                                    img_bit=BitmapFactory.decodeResource(getResources(), R.drawable.default_product);
                                     img[big_img_ref].setImageBitmap(img_bit);
                                     imgbig.setImageBitmap(img_bit);
                                     img_bitmap[big_img_ref]=img_bit;
