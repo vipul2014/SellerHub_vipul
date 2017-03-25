@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:background="#e7e5e5"
     android:paddingBottom="10dp">
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
     <ScrollView
         android:layout_width="match_parent"

@@ -26,7 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddProduct"/>
-        <activity android:name=".Listing_product_view"/>
+        <activity android:name=".Listing_product_view"
+              />
         <activity android:name=".registration_module.SignUp"
             android:label="Personal Details"
             android:parentActivityName=".main"></activity>

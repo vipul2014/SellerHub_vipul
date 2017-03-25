@@ -1,7 +1,9 @@
 package com.example.chintu.sellerhub;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +45,17 @@ public class Listing_product_view extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_product);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         Title=(TextView)findViewById(R.id.tv_title);
         img1=(NetworkImageView) findViewById(R.id.img1);
         img2=(NetworkImageView) findViewById(R.id.img2);
@@ -97,6 +110,7 @@ public class Listing_product_view extends AppCompatActivity implements View.OnCl
             JSONArray result = jsonObject.getJSONArray(Config.JSON_ARRAY);
             JSONObject collegeData = result.getJSONObject(0);
             Title.setText(collegeData.getString(Config.KEY_TITLE));
+            setTitle(collegeData.getString(Config.KEY_TITLE));
           CreatedOn.setText(collegeData.getString(Config.KEY_CREATEDON));
             Description.setText(collegeData.getString(Config.KEY_DESCRIPTION));
             Category.setText(collegeData.getString(Config.KEY_CATEGORY));
@@ -107,46 +121,51 @@ public class Listing_product_view extends AppCompatActivity implements View.OnCl
            // Width.setText(collegeData.getString(Config.KEY_NAME););
             //Breadth.setText(collegeData.getString(Config.KEY_NAME););
             Stock.setText(String.valueOf(collegeData.getInt(Config.KEY_STOCK)));
-            /* if(collegeData.getString(Config.KEY_IMG1)!="")
+             if(collegeData.getString(Config.KEY_IMG1)!= "")
             {
+                String url=collegeData.getString(Config.KEY_IMG1);
                 imageLoader = CustomVolleyRequest.getInstance(getContext())
                         .getImageLoader();
-                imageLoader.get(Config.KEY_IMG1, ImageLoader.getImageListener(img1,
-                        R.drawable.default_product,  R.drawable.default_product));
-                img1.setImageUrl(Config.KEY_IMG1, imageLoader);
+                imageLoader.get(url, ImageLoader.getImageListener(img1,
+                        R.drawable.default_product, R.drawable.default_product));
+                img1.setImageUrl(url, imageLoader);
             }
            if(collegeData.getString(Config.KEY_IMG2)!="")
             {
+                String url=collegeData.getString(Config.KEY_IMG2);
                 imageLoader = CustomVolleyRequest.getInstance(getContext())
                         .getImageLoader();
-                imageLoader.get(Config.KEY_IMG2, ImageLoader.getImageListener(img2,
+                imageLoader.get(url, ImageLoader.getImageListener(img2,
                         R.drawable.default_product,  R.drawable.default_product));
-                img2.setImageUrl(Config.KEY_IMG2, imageLoader);
+                img2.setImageUrl(url, imageLoader);
             }
             if(collegeData.getString(Config.KEY_IMG3)!="")
             {
+                String url=collegeData.getString(Config.KEY_IMG3);
                 imageLoader = CustomVolleyRequest.getInstance(getContext())
                         .getImageLoader();
-                imageLoader.get(Config.KEY_IMG3, ImageLoader.getImageListener(img3,
+                imageLoader.get(url, ImageLoader.getImageListener(img3,
                         R.drawable.default_product,  R.drawable.default_product));
-                img3.setImageUrl(Config.KEY_IMG3, imageLoader);
+                img3.setImageUrl(url, imageLoader);
             }
             if(collegeData.getString(Config.KEY_IMG4)!="")
             {
+                String url=collegeData.getString(Config.KEY_IMG4);
                 imageLoader = CustomVolleyRequest.getInstance(getContext())
                         .getImageLoader();
-                imageLoader.get(Config.KEY_IMG4, ImageLoader.getImageListener(img4,
+                imageLoader.get(url, ImageLoader.getImageListener(img4,
                         R.drawable.default_product,  R.drawable.default_product));
-                img4.setImageUrl(Config.KEY_IMG4, imageLoader);
+                img4.setImageUrl(url, imageLoader);
             }
             if(collegeData.getString(Config.KEY_IMG5)!="")
             {
+                String url=collegeData.getString(Config.KEY_IMG5);
                 imageLoader = CustomVolleyRequest.getInstance(getContext())
                         .getImageLoader();
-                imageLoader.get(Config.KEY_IMG5, ImageLoader.getImageListener(img5,
+                imageLoader.get(url, ImageLoader.getImageListener(img5,
                         R.drawable.default_product,  R.drawable.default_product));
-                img5.setImageUrl(Config.KEY_IMG5, imageLoader);
-            } */
+                img5.setImageUrl(url, imageLoader);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
