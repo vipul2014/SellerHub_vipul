@@ -3,6 +3,7 @@ package com.example.chintu.sellerhub;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -154,6 +155,12 @@ public class Listing_Inactive_fragment extends Fragment implements View.OnClickL
                 public void onClick(View v) {
                     //www.worldbestlearningcenter.com/tips/Android-send-intent-from-fragment-to-activity.htm
                     //for data transfer from fragment to activity
+                    Intent intent=new Intent(getActivity(), Listing_product_view.class);
+                    //add data to the Intent object
+                    intent.putExtra("artwork_id", String.valueOf(tutorListBeans.getID()));
+                    //start the second activity
+                    startActivity(intent);
+
                     Toast.makeText(getContext(),"clicked="+ String.valueOf(tutorListBeans.getTitle()) ,Toast.LENGTH_SHORT).show();
 
                 }

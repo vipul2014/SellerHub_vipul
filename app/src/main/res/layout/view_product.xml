@@ -4,19 +4,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e7e5e5">
-
-    <include layout="@layout/toolbar"/>
+    android:background="#e7e5e5"
+    android:paddingBottom="10dp">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="686dp"
         android:padding="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,44 +42,44 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <ImageView
+                        <com.android.volley.toolbox.NetworkImageView
                             android:id="@+id/img1"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/logo" />
+                            android:src="@drawable/default_product" />
 
-                        <ImageView
+                        <com.android.volley.toolbox.NetworkImageView
                             android:id="@+id/img2"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/logo" />
+                            android:src="@drawable/default_product" />
 
-                        <ImageView
+                        <com.android.volley.toolbox.NetworkImageView
                             android:id="@+id/img3"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/logo" />
+                            android:src="@drawable/default_product" />
 
-                        <ImageView
+                        <com.android.volley.toolbox.NetworkImageView
                             android:id="@+id/img4"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/logo" />
+                            android:src="@drawable/default_product" />
 
-                        <ImageView
+                        <com.android.volley.toolbox.NetworkImageView
                             android:id="@+id/img5"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/logo" />
+                            android:src="@drawable/default_product" />
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
@@ -135,6 +135,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
+                        android:id="@+id/tv_title"
                         android:text="title of the art"
                         android:textColor="#000" />
                 </LinearLayout>
@@ -162,6 +163,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
+                        android:id="@+id/tv_createdOn"
                         android:text="Date of the art'z creation"
                         android:textColor="#000" />
                 </LinearLayout>
@@ -190,6 +192,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="description of the product"
+                        android:id="@+id/tv_description"
                         android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
@@ -242,6 +245,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="product category"
+                        android:id="@+id/tv_category"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -268,6 +272,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
+                        android:id="@+id/tv_style"
                         android:text="style of art"
                         android:textColor="#000" />
                 </LinearLayout>
@@ -295,6 +300,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="surface of art"
+                        android:id="@+id/tv_surface"
                         android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
@@ -351,6 +357,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="number of artworks"
+                        android:id="@+id/tv_stock"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -378,6 +385,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="final selling price"
+                        android:id="@+id/tv_MRP"
                         android:textColor="#000" />
                 </LinearLayout>
                 <LinearLayout
@@ -403,6 +411,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
+                        android:id="@+id/tv_selling_price"
                         android:text="artist's price for the art"
                         android:textColor="#000" />
                 </LinearLayout>
@@ -429,6 +438,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
+                        android:id="@+id/tv_delivery_charge"
                         android:text="according to area"
                         android:textColor="#000" />
                 </LinearLayout>
@@ -455,6 +465,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv_length"
                         android:layout_weight="0.8"
                         android:text="length in cm"
                         android:textColor="#000" />
@@ -484,6 +495,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="breadth in cm"
+                        android:id="@+id/tv_width"
                         android:textColor="#000" />
                 </LinearLayout>
                 <LinearLayout
@@ -510,6 +522,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.8"
                         android:text="zero ho to hide krdio"
+                        android:id="@+id/tv_height"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -542,4 +555,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <include layout="@layout/toolbar"/>
+
 </LinearLayout>
