@@ -1,8 +1,10 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.listing_module;
 
 /**
  * Created by Mohit chauhan on 8/2/2016.
  */
+
+import com.example.chintu.sellerhub.listing_module.Listing_Recycler_DataCollect;
 
 import org.json.JSONArray;
 import org.json.JSONException;

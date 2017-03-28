@@ -1,21 +1,17 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.listing_module;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
@@ -24,7 +20,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,6 +34,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.chintu.sellerhub.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

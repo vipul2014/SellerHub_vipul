@@ -1,20 +1,11 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.listing_module;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -24,13 +15,14 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.chintu.sellerhub.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.androidquery.util.AQUtility.getContext;
-import static com.example.chintu.sellerhub.Config.DATA_URL;
+import static com.example.chintu.sellerhub.listing_module.Config.DATA_URL;
 
 /**
  * Created by hp lap on 21-03-2017.

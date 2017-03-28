@@ -1,4 +1,4 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.listing_module;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -25,35 +25,34 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
+import com.example.chintu.sellerhub.R;
 
 import org.json.JSONObject;
 
 import java.util.List;
 
 
-public class Listing_Instock_fragment extends Fragment implements View.OnClickListener {
+public class Listing_Inactive_fragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private AQuery aQuery;
     private List<Listing_Recycler_DataCollect> ListData;
-    private MyAdapter mAdapter;
+    private Listing_Inactive_fragment.MyAdapter mAdapter;
     private ImageLoader imageLoader;
     TextView artwork_no;
-
     public int lastPosition=-1;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_listing, container, false);
-        artwork_no=(TextView)v.findViewById(R.id.artwork);
         aQuery = new AQuery(getActivity());
+         artwork_no=(TextView)v.findViewById(R.id.artwork);
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view_artwork);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        loadMalls("http://artbirdz.hol.es/Artbirdz%20seller%20hub/Active_Listin.php");
+       loadMalls("http://artbirdz.hol.es/Artbirdz%20seller%20hub/Active_Listin.php");
         return v;
     }
-
     private void loadMalls(String url) {
         if (isConnection()) {
             //String url = UrlConstants.BASE_URL + UrlConstants.GET_MALLS_LISTING + "?latitude=" + "28.5038941" + "&longitude=" + "77.0973031";
@@ -69,7 +68,7 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
                 public void callback(String url, JSONObject json, AjaxStatus status) {
                     if (json != null) {
                         ListData = ConversionHelper.getcomment(json);
-                        mAdapter = new Listing_Instock_fragment.MyAdapter();
+                        mAdapter = new Listing_Inactive_fragment.MyAdapter();
                         artwork_no.setText(String.valueOf(mAdapter.getItemCount()));
                         recyclerView.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
@@ -112,23 +111,20 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
 
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 
-    public class MyAdapter extends RecyclerView.Adapter<Listing_Instock_fragment.MyAdapter.ViewHolder> {
+    public class MyAdapter extends RecyclerView.Adapter<Listing_Inactive_fragment.MyAdapter.ViewHolder> {
 
         @Override
-        public Listing_Instock_fragment.MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public Listing_Inactive_fragment.MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemLayoutView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.artwork_recycler,parent,false);
-            Listing_Instock_fragment.MyAdapter.ViewHolder viewHolder = new Listing_Instock_fragment.MyAdapter.ViewHolder(itemLayoutView);
+            Listing_Inactive_fragment.MyAdapter.ViewHolder viewHolder = new Listing_Inactive_fragment.MyAdapter.ViewHolder(itemLayoutView);
             return viewHolder;
         }
 
         @Override
-        public void onBindViewHolder(Listing_Instock_fragment.MyAdapter.ViewHolder viewHolder, int position) {
+        public void onBindViewHolder(Listing_Inactive_fragment.MyAdapter.ViewHolder viewHolder, int position) {
 
             // MallsListBean storeBean = mallsList.get(position);
             final Listing_Recycler_DataCollect tutorListBeans = ListData.get(position);
@@ -154,6 +150,7 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
                             : R.anim.down_from_top);
             viewHolder.itemView.startAnimation(animation);
             lastPosition = position;
+
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -179,9 +176,9 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
             }
 
             viewHolder.locality.setText(mallsListBean.getAddress());
-            */
-            // viewHolder.txtViewTitle.setTag(R.string.mallIdTag, mallsListBean.getMallId());
 
+            // viewHolder.txtViewTitle.setTag(R.string.mallIdTag, mallsListBean.getMallId());
+*/
 
         }
 
@@ -216,7 +213,7 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
             }
         }
         @Override
-        public void onViewDetachedFromWindow(Listing_Instock_fragment.MyAdapter.ViewHolder holder) {
+        public void onViewDetachedFromWindow(Listing_Inactive_fragment.MyAdapter.ViewHolder holder) {
             super.onViewDetachedFromWindow(holder);
             holder.itemView.clearAnimation();
         }
@@ -225,6 +222,12 @@ public class Listing_Instock_fragment extends Fragment implements View.OnClickLi
         public int getItemCount() {
             return ListData.size();
         }
+
+    }
+
+
+    @Override
+    public void onClick(View view) {
 
     }
 }

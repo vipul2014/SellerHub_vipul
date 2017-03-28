@@ -25,8 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddProduct"/>
-        <activity android:name=".Listing_product_view"
+        <activity android:name=".listing_module.AddProduct"/>
+        <activity android:name=".listing_module.Listing_product_view"
               />
         <activity android:name=".registration_module.SignUp"
             android:label="Personal Details"

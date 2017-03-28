@@ -1,4 +1,4 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.listing_module;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.chintu.sellerhub.R;
+import com.example.chintu.sellerhub.SlidingTabLayout;
 import com.example.chintu.sellerhub.registration_module.FragmentTwo;
 
 /**

@@ -1,4 +1,4 @@
-package com.example.chintu.sellerhub;
+package com.example.chintu.sellerhub.listing_module;
 
 /**
  * Created by hp lap on 11-03-2017.
