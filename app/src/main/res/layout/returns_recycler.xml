@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="#fff"
+    android:orientation="horizontal">
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:id="@+id/return_image_recycler"
+        android:scaleType="fitXY"
+        />
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/return_image_recycler"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title of Artwork"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:id="@+id/artwork_title_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="Artwork Id : "
+            android:id="@+id/f_artwork_id_recycler"
+            android:layout_below="@+id/artwork_title_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+
+            android:text="0112234"
+            android:id="@+id/artwork_id_recycler"
+            android:layout_below="@+id/artwork_title_recycler"
+            android:layout_toRightOf="@+id/f_artwork_id_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/f_artwork_id_recycler"
+            android:text="Requested On : "
+            android:textSize="10dp"
+            android:id="@+id/f_return_request_recycler"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/f_artwork_id_recycler"
+            android:layout_toRightOf="@+id/f_return_request_recycler"
+            android:text="Mar 26, 01:14 pm "
+            android:textSize="10dp"
+            android:id="@+id/return_request_recycler"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/artwork_fprice_recycler"
+                android:textSize="15dp"
+
+                android:text=" ₹ "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/artwork_price_recycler"
+                android:textSize="15dp"
+
+                android:text="22200"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/return_type_recycler"
+                android:textSize="20dp"
+                android:text=" Courier Return"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>
