@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chintu.sellerhub">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -21,28 +22,41 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".listing_module.AddProduct"/>
-        <activity android:name=".listing_module.Listing_product_view"
+        <activity
+            android:name=".listing_module.AddProduct"/>
+        <activity
+            android:name=".listing_module.Listing_product_view"
               />
-        <activity android:name=".registration_module.SignUp"
+        <activity
+            android:name=".registration_module.SignUp"
             android:label="Personal Details"
-            android:parentActivityName=".main"></activity>
-        <activity android:name=".registration_module.PortFolio"
+            android:parentActivityName=".main">
+        </activity>
+        <activity
+            android:name=".registration_module.PortFolio"
             android:label="Portfolio"
-            android:parentActivityName=".registration_module.BankReg"></activity>
-        <activity android:name=".BankEdit"
-            android:label="Edit Bank Details"></activity>
-        <activity android:name=".BasicEdit"></activity>
-        <activity android:name=".PickupEdit"></activity>
-        <activity android:name=".registration_module.BankReg"
+            android:parentActivityName=".registration_module.BankReg">
+        </activity>
+        <activity
+            android:name=".BankEdit"
+            android:label="Edit Bank Details">
+        </activity>
+        <activity
+            android:name=".BasicEdit">
+        </activity>
+        <activity
+            android:name=".PickupEdit">
+        </activity>
+        <activity
+            android:name=".registration_module.BankReg"
             android:label="Bank Details"
-            android:parentActivityName=".registration_module.SignUp"></activity>
-        <activity android:name=".NavigationActivity"></activity>
-
+            android:parentActivityName=".registration_module.SignUp">
+        </activity>
+        <activity
+            android:name=".NavigationActivity">
+        </activity>
     </application>
-
 </manifest>
