@@ -55,6 +55,7 @@
             android:label="Bank Details"
             android:parentActivityName=".registration_module.SignUp">
         </activity>
+
         <activity
             android:name=".NavigationActivity">
         </activity>
